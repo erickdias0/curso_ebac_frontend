@@ -10,7 +10,7 @@ p{
 body > header{
     background-color:rgb(10, 10, 10);
     padding: 16px 0;
-    color: rgb(243, 204, 204);
+    color: rgb(108, 166, 180);
 }
 
 header li {
@@ -21,7 +21,7 @@ header li {
 }
 
 header li a{
-    color: rgb(243, 204, 204);
+    color: rgba(51, 48, 233, 0.801);
     text-decoration: none;
 }
 
