@@ -4,10 +4,11 @@ const message = document.getElementById('message')
 form.addEventListener('submit', function(e){
     e.preventDefault()
 
-    let num1 = parseFloat(document.getElementById('num-1').value)
-    let num2 = parseFloat(document.getElementById('num-2').value)
+    const num1 = parseFloat(document.getElementById('num-1').value)
+    const num2 = parseFloat(document.getElementById('num-2').value)
     message.style.display = 'block'
     message.style.backgroundColor ='red'
+    
     if(num2>num1){
         message.innerHTML = 'Correto! ' + num2 + ' é maior que ' + num1 + '.'
         message.style.backgroundColor = 'green'
