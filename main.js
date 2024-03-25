@@ -1,25 +1,22 @@
-const form = document.getElementById('form-compara')
-const message = document.getElementById('message')
+$(document).ready(function (){
+    $('header button').click(function(){
+        $('form').slideDown()
+    })
+    $('#cancel-button').click(function(){
+        $('form').slideUp()
+    })
+})
 
-form.addEventListener('submit', function(e){
+$('form').on('submit',function(e){
     e.preventDefault()
-
-    const num1 = parseFloat(document.getElementById('num-1').value)
-    const num2 = parseFloat(document.getElementById('num-2').value)
-    message.style.display = 'block'
-    message.style.backgroundColor ='red'
-    
-    if(num2>num1){
-        message.innerHTML = 'Correto! ' + num2 + ' é maior que ' + num1 + '.'
-        message.style.backgroundColor = 'green'
-    }else if(num2<num1){
-        message.innerHTML = num2 + ' não é maior que ' + num1 + ' !'
-    } else{
-        message.innerHTML = 'Os números são iguais'
-    }
-
+    const newTaskDesc = $('#new-task').val()
+    const newTask = $(`<li style="display:none"> ${newTaskDesc} </li>`)
+    newTask.appendTo('ul')
+    newTask.fadeIn(800)
+    $('#new-task').val('')
 })
 
-form.addEventListener('change', function(e){
-    message.style.display = 'none'
-})
+$("#list").on('click', 'li', function() {
+    $(this).toggleClass('done');
+
+});
